@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Text, SpanSearch, Container, Search, SearchInput, SearchButton, SearchIcon } from './styles';
-import Icon from '../../assets/SearchIcon.png';
+import { Container, Search } from './styles';
+import Logo from '../../components/Logo';
+import SearchBar from '../../components/SearchBar';
 
 export default class Home extends Component {
     render() {
@@ -8,16 +9,9 @@ export default class Home extends Component {
             <Container>
                 <Search>
                     <div className="col-12">
-                        <Text>
-                            Github <SpanSearch>Search</SpanSearch>
-                        </Text>
+                        <Logo />
                     </div>
-                    <div className="col-12 mx-auto row justify-content-center">
-                        <SearchInput className="my-2 my-md-0"></SearchInput>
-                        <SearchButton>
-                                <SearchIcon src={Icon} alt={"Icon"} />
-                        </SearchButton>
-                    </div>
+                    <SearchBar />
                 </Search>
             </Container>
         );
