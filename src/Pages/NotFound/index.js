@@ -8,7 +8,7 @@ export default class NotFound extends Component {
     <div>
         <TopBar className="col-12"/>
         <DivMessage>
-          <NotFoundMessage>User not found :(</NotFoundMessage>
+          <NotFoundMessage className="mx-auto">User not found :(</NotFoundMessage>
         </DivMessage>
     </div>
     );

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const NotFoundMessage = styled.text`
+export const NotFoundMessage = styled.p`
     width: 315px;
   height: 41px;
   font-family: Raleway;

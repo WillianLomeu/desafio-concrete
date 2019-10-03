@@ -4,6 +4,7 @@ import Logo from '../../components/Logo';
 import SearchBar from '../../components/SearchBar';
 
 export default class Home extends Component {
+
     render() {
         return (
             <Container>
@@ -11,7 +12,8 @@ export default class Home extends Component {
                     <div className="col-12">
                         <Logo />
                     </div>
-                    <SearchBar />
+                    <SearchBar
+                    />
                 </Search>
             </Container>
         );

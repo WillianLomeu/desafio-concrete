@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Icon from '../assets/SearchIcon.png';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export const SearchInput = styled.input`
@@ -27,40 +28,46 @@ export const SearchIcon = styled.img`
   margin-right: 35px;
 `
 
-
 export default class SearchBar extends Component {
   state = {
     name: '',
-  };
-
-  handleChange = event => {
+    auth: true,
+    linktrue: "",
+};
+handleChange = event => {
     this.setState({ name: event.target.value });
-  }
-
-  handleSubmit = event => {
+}
+handleSubmit = event => {
     event.preventDefault();
     this.searchUser();
+}
 
-  }
-  searchUser = async () => {
+searchUser = async () => {
 
-    const nick = this.state.name;
+    const username = this.state.name;
 
     try {
-        const { data: login } = await axios.get(`https://api.github.com/users/${nick}`);
+        const { data: login } = await axios.get(`https://api.github.com/users/${username}`);
+        console.log(this.state.name)
         console.log(login)
+        this.setState({ linktrue: "/result" })
+        this.PrivateRoute({pathname: '/result'}, )
     }
-    catch (error) { }
-
+    catch (error) {
+        this.setState({ linktrue: "/notfound" })
+    }
 }
   render() {
     return (
-      <Form onSubmit={this.handleSubmit} className="mx-auto row justify-content-center">
-        <SearchInput name="user" onChange={this.handleChange} className="my-2 my-md-0"></SearchInput>
+      <Form onSubmit={this.props.handleSubmit} className="mx-auto row justify-content-center">
+        <SearchInput name="user" onChange={this.props.handleChange} className="my-2 my-md-0"></SearchInput>
         <SearchButton type="submit">
-          <SearchIcon src={Icon} alt={"Icon"} />
+          <Link to='/result'>
+            <SearchIcon src={Icon} alt={"Icon"} />
+          </Link>
         </SearchButton>
       </Form>
+
     );
   }
 }
