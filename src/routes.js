@@ -22,11 +22,13 @@ export default class Rotas extends Component {
             followers: '',
             stars: '',
             repo: [],
+            starTotal:'',
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.searchUser = this.searchUser.bind(this);
     }
+
 
     handleChange = event => {
         this.setState({ name: event.target.value });
@@ -37,7 +39,7 @@ export default class Rotas extends Component {
         this.searchUser();
         this.searchRepo();
     }
-
+        
     searchUser = async () => {
 
         const username = this.state.name;
@@ -53,6 +55,7 @@ export default class Rotas extends Component {
             this.setState({ repositorys: login['public_repos'] })
             this.setState({ followers: login['followers'] })
             this.setState({ stars: login['stargazers_count'] })
+            
         }
         catch (error) {
             this.setState({ NotFoundOpen: true, resultOpen: false, homeOpen: false })
@@ -65,8 +68,6 @@ export default class Rotas extends Component {
 
         try {
             const { data: repos } = await axios.get(`https://api.github.com/users/${username}/repos`);
-            console.log(this.state.name)
-            console.log(repos)
             this.setState({ repo: repos })
         }
         catch (error) {
@@ -100,6 +101,7 @@ export default class Rotas extends Component {
                         followers={this.state.followers}
                         stars={this.state.stars}
                         repo={this.state.repo}
+                        starTotal={this.state.starTotal}
                     />
                 </Collapse>
 

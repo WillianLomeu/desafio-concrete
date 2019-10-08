@@ -120,7 +120,7 @@ export const Icons = styled.img`
   height: 24px;
 `
 export const DivTopBar = styled.div`
-    height: 90px;
+    height: 100px;
     margin-top: 35px;
     margin-left: 25px;
 `
@@ -132,7 +132,7 @@ export const SearchInput = styled.input`
   font-weight: 300;
   padding-left:17px;
 `
-export const SearchButton = styled.button`
+export const SearchButton = styled.a`
   width: 100px;
   height: 50px;
   border-radius: 2px;

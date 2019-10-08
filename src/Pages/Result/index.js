@@ -15,8 +15,8 @@ export default class Result extends Component {
     return (
       <div>
         <DivTopBar className="col-12 mx-auto row justify-content-center">
-                <MiniLogo />
-                <Form onSubmit={this.props.handleSubmit} className="mx-auto row justify-content-center">
+                <MiniLogo className="col" />
+                <Form onSubmit={this.props.handleSubmit} className="col mx-auto row justify-content-center">
                     <SearchInput name="user" onChange={this.props.handleChange} className="my-2 my-md-0"></SearchInput>
                         <SearchButton type="submit">
                             <SearchIcon src={Icon} alt={"Icon"} />
@@ -32,7 +32,7 @@ export default class Result extends Component {
             <User className="col-12">{this.props.user}</User>
             <Organization className="col-12"><Icons src={organizationicon} /> {this.props.organization}</Organization>
             <Location className="col-12"><Icons src={locationicon} /> {this.props.location}</Location>
-            <Stars className="col-12"><Icons src={staricon} />{this.props.stars}</Stars>
+            <Stars className="col-12"><Icons src={staricon} />{this.props.starTotal}</Stars>
             <Repositorys className="col-12"><Icons src={repositoryicon} /> {this.props.repositorys}</Repositorys>
             <Followers className="col-12"><Icons src={followersicon} /> {this.props.followers}</Followers>
           </SidBar>
@@ -47,10 +47,8 @@ export default class Result extends Component {
                 </div>
                 <Stars className="col-12"><Icons src={staricon} /> {repos.stargazers_count}</Stars>
               </BlocoRepo>
-              
               ))}
           </Repository>
-
         </div>
 
       </div>

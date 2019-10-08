@@ -20,7 +20,7 @@ export const SearchInput = styled.input`
   font-weight: 300;
   padding-left:17px;
 `
-export const SearchButton = styled.button`
+export const SearchButton = styled.a`
   width: 100px;
   height: 50px;
   border-radius: 2px;
