@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SidBar = styled.div`
-  width:300px;
+  max-width:300px;
   margin-left:25px;
 `
 
@@ -119,3 +119,30 @@ export const Icons = styled.img`
   width: 24px;
   height: 24px;
 `
+export const DivTopBar = styled.div`
+    height: 90px;
+    margin-top: 35px;
+    margin-left: 25px;
+`
+export const SearchInput = styled.input`
+  width: 650px;
+  height: 50px;
+  background-color: #ffffff;
+  font-family: Raleway;
+  font-weight: 300;
+  padding-left:17px;
+`
+export const SearchButton = styled.button`
+  width: 100px;
+  height: 50px;
+  border-radius: 2px;
+  background-color: #ac53f2;
+`
+export const SearchIcon = styled.img`
+  width: 30px;
+  height: 30.1px;
+  box-shadow: 0 0 4px NaNpx var(--black-40);
+  margin-top:10px;
+  margin-left:35px;
+  margin-right: 35px;
+  `
