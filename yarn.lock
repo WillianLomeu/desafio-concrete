@@ -8,6 +8,7 @@
   integrity sha512-27d4lZoomVyo51VegxI20xZPuSHusqbQag/ztrBC7wegWoQ1nLREPVSKSW8byhTlzTKyNE4ifaTA6lCp7JjpFw==
   dependencies:
     "@babel/highlight" "^7.0.0"
+    
 
 "@babel/core@7.6.0", "@babel/core@^7.1.0", "@babel/core@^7.4.5":
   version "7.6.0"
